@@ -1,22 +1,22 @@
 // ** React Imports
-import { createContext, useEffect, useState, ReactNode } from "react";
+import { useGetMeQuery } from '@/services/auth'
+import { createContext, useEffect, useState, ReactNode } from 'react'
 
 // ** Defaults
-const defaultProvider: any = {};
+const defaultProvider: any = {}
 
-const AuthContext = createContext(defaultProvider);
+const AuthContext = createContext(defaultProvider)
 
 type Props = {
-  children: ReactNode;
-};
+    children: ReactNode
+}
 
 const AuthProvider = ({ children }: Props) => {
-  useEffect(() => {
-    console.log("AuthProvider");
-  }, []);
-  const values = {};
+    const {} = useGetMeQuery('')
+    
+    const values = {}
 
-  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
-};
+    return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
+}
 
-export { AuthContext, AuthProvider };
+export { AuthContext, AuthProvider }

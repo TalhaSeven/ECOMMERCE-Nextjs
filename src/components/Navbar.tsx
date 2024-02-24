@@ -1,5 +1,6 @@
 import { RootState } from "@/store";
 import Link from "next/link";
+import React from "react";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
@@ -33,43 +34,50 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link href="/">Home</Link>
+                <a>Item 1</a>
               </li>
               <li>
-                <Link href="/products">Product</Link>
+                <a>Parent</a>
+                <ul className="p-2">
+                  <li>
+                    <a>Submenu 1</a>
+                  </li>
+                  <li>
+                    <a>Submenu 2</a>
+                  </li>
+                </ul>
               </li>
               <li>
-                <Link href="/about">About Us</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
+                <a>Item 3</a>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Ecommerce</a>
+          <a className="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link href="/">Home</Link>
+              <a>Item 1</a>
             </li>
             <li>
-              <Link href="/products">Product</Link>
+              <details>
+                <summary>Parent</summary>
+                <ul className="p-2">
+                  <li>
+                    <a>Submenu 1</a>
+                  </li>
+                  <li>
+                    <a>Submenu 2</a>
+                  </li>
+                </ul>
+              </details>
             </li>
             <li>
-              <Link href="/about">About Us</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
+              <a>Item 3</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link href="/auth/sign-in">Sign-in</Link>
-            </li>
-          </ul>
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
@@ -105,14 +113,14 @@ const Navbar = () => {
                   {basket.basket.length} Items
                 </span>
                 <span className="text-info">
-                  Subtotal:
+                  Subtotal:{" "}
                   {basket.basket.reduce(
                     (acc: number, o: any) => acc + parseFloat(o.total),
                     0
                   )}
                 </span>
                 <div className="card-actions">
-                  <Link className="btn btn-primary btn-block" href="/view-cart">View cart</Link>
+                  <Link href="/view-cart">View cart</Link>
                 </div>
               </div>
             </div>

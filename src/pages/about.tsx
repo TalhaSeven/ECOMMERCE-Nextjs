@@ -1,9 +1,10 @@
-import React from 'react'
+import { LayoutsTypes } from "@/layouts/Types";
 
-const about = () => {
-  return (
-    <div>about</div>
-  )
+const About: LayoutsTypes = () => {
+    return (
+        <>
+            Home Page
+        </>
+    )
 }
-
-export default about
+export default About;
