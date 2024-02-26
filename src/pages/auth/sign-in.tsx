@@ -15,7 +15,7 @@ const SignIn: LayoutsTypes = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: "abc@xyz.com",
+      email: "test@xyz.com",
       password: "123456",
     },
     validationSchema: Yup.object({

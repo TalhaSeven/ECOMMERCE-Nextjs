@@ -2,7 +2,21 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['talhaseven.com'],
+    domains: ["talhaseven.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.whitmorerarebooks.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "tailwindui.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
