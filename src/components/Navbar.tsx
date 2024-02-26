@@ -1,4 +1,5 @@
 import { RootState } from "@/store";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -34,46 +35,74 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Item 1</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <Link href="/about">About</Link>
+              </li>
+
+              <li>
+                <Link href="/products">Products</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link href="/contact">Contact</Link>
+              </li>
+
+              <li>
+                <details>
+                  <summary>
+                    <Link href="/dashboard">Dashboard</Link>
+                  </summary>
+                  <ul className="p-2">
+                    <li>
+                      <Link href="/dashboard/users">Users</Link>
+                    </li>
+                    <li>
+                      <Link href="/dashboard/products">Products</Link>
+                    </li>
+                  </ul>
+                </details>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <Link href="/" className="btn btn-ghost text-xl">
+          <Image
+              src="https://talhaseven.com/assets/logo.9ddb1c27.webp"
+              width={25}
+              height={25} 
+              alt="Talha Seven's Logo"
+              className="h-full w-full object-cover object-center rounded-full"
+            />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/products">Products</Link>
+            </li>
+            <li>
+                <Link href="/contact">Contact</Link>
+              </li>
+            <li>
               <details>
-                <summary>Parent</summary>
+                <summary>
+                  <Link href="/dashboard">Dashboard</Link>
+                </summary>
                 <ul className="p-2">
                   <li>
-                    <a>Submenu 1</a>
+                    <Link href="/dashboard/users">Users</Link>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <Link href="/dashboard/products">Products</Link>
                   </li>
                 </ul>
               </details>
-            </li>
-            <li>
-              <a>Item 3</a>
             </li>
           </ul>
         </div>
@@ -142,6 +171,9 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
+              <li>
+                <Link href="/auth/sign-in">Sign-in</Link>
+              </li>
               <li>
                 <a className="justify-between">{user.user.name}</a>
               </li>

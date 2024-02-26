@@ -3,7 +3,7 @@ import { LayoutsTypes } from "@/layouts/Types";
 const About: LayoutsTypes = () => {
     return (
         <>
-            Home Page
+            About
         </>
     )
 }
